@@ -1,0 +1,123 @@
+body
+{
+    background: none repeat scroll 0% 0% #7872A1;
+}
+
+#navbar
+{
+    width: 1200px;
+    margin: 0px auto;
+}
+
+#mainContainer
+{
+    width: 1200px;
+    margin: 0px auto;
+    margin-top: 41px;
+}
+
+.row
+{
+    margin-bottom: 5px;
+}
+
+.column
+{
+    padding-top: 10px;
+}
+
+.ui.segment
+{
+    background-color: #B9B5D7;
+}
+
+.ui.inverted.black.segment, .ui.inverted.segment
+{
+    background-color: #564F8A !important;
+    color: #FFF !important;
+    padding: 5px;
+    padding-left: 14px;
+}
+
+.ui.segment.attached
+{
+    border: 1px solid #564F8A;
+}
+
+#rightPage
+{
+    padding-top: 50%;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: pointer;
+}
+
+#leftPage
+{
+    padding-top: 50%;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: pointer;
+}
+
+#mangaTitle
+{
+}
+
+#home
+{
+    cursor: pointer;
+}
+
+#tag
+{
+    cursor: pointer;
+}
+
+.coverImgPart
+{
+    cursor: pointer;
+}
+
+#indexPageLeft
+{
+    cursor: pointer;
+}
+
+#indexPageRight
+{
+    cursor: pointer;
+}
+
+#previewLeft
+{
+    cursor: pointer;
+}
+
+#previewRight
+{
+    cursor: pointer;
+}
+
+.galleryBox
+{
+    cursor: pointer;
+}
+
+#loadImgBox
+{
+    cursor: pointer;
+    margin: 0px auto;
+}
+
+#loginId, #loginPassword
+{
+    border: 0px;
+}
+
+#operationDescription
+{
+    text-align: center;
+    margin-top: 0px;
+    color: #FFF;
+}
