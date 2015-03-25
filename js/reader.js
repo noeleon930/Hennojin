@@ -1,5 +1,6 @@
 var totalPage = 0;
 var thePath = "";
+var searchInReader = false;
 
 $(function ()
 {
@@ -78,61 +79,77 @@ $(function ()
     //Handle keypress WASD or four arrows
     $("body").on("keydown", function (e)
     {
-        //Current scroll position
-        var scrollPosition = $(document).scrollTop();
-
-        //But for full page
-        if ($("#largerImg").dimmer('is active'))
-            scrollPosition = $("#largerImg").scrollTop();
-
-        //Left arrow or A
-        if (e.which == 37 || e.which == 65)
+        if(searchInReader == false)
         {
-            console.log("left arrow!");
-            $("#mangaLeft").trigger("click");
-        }
+            //Current scroll position
+            var scrollPosition = $(document).scrollTop();
 
-        //Right arrow or D
-        if (e.which == 39 || e.which == 68)
-        {
-            console.log("right arrow!");
-            $("#mangaRight").trigger("click");
-        }
-
-        //Up arrow or W
-        if (e.which == 87)
-        {
-            scrollPosition -= 35;
+            //But for full page
             if ($("#largerImg").dimmer('is active'))
-                $("#largerImg").scrollTop(scrollPosition);
-            else
-                $(document).scrollTop(scrollPosition);
-        }
+                scrollPosition = $("#largerImg").scrollTop();
 
-        //Down arrow or S
-        if (e.which == 83)
-        {
-            scrollPosition += 35;
-            if ($("#largerImg").dimmer('is active'))
-                $("#largerImg").scrollTop(scrollPosition);
-            else
-                $(document).scrollTop(scrollPosition);
-        }
+            //Left arrow or A
+            if (e.which == 37 || e.which == 65)
+            {
+                console.log("left arrow!");
+                $("#mangaLeft").trigger("click");
+            }
 
-        //Toggle Zoom in
-        if (e.which == 90)
-        {
-            $("#largerImg").dimmer('toggle');
-            $("#largerImgBox").html('\
-                <img id="loadImgBox" class="ui bordered image" style="max-width:' + $(window).width() + 'px" src="' + thePath + loadPageId + '.jpg">\
-                ');
-        }
+            //Right arrow or D
+            if (e.which == 39 || e.which == 68)
+            {
+                console.log("right arrow!");
+                $("#mangaRight").trigger("click");
+            }
 
-        //Go back to gallery
-        if (e.which == 71)
-        {
-            $("#goBackGallery").trigger("click");
+            //Up arrow or W
+            if (e.which == 87)
+            {
+                scrollPosition -= 35;
+                if ($("#largerImg").dimmer('is active'))
+                    $("#largerImg").scrollTop(scrollPosition);
+                else
+                    $(document).scrollTop(scrollPosition);
+            }
+
+            //Down arrow or S
+            if (e.which == 83)
+            {
+                scrollPosition += 35;
+                if ($("#largerImg").dimmer('is active'))
+                    $("#largerImg").scrollTop(scrollPosition);
+                else
+                    $(document).scrollTop(scrollPosition);
+            }
+
+            //Toggle Zoom in
+            if (e.which == 90)
+            {
+                $("#largerImg").dimmer('toggle');
+                $("#largerImgBox").html('\
+                    <img id="loadImgBox" class="ui bordered image" style="max-width:' + $(window).width() + 'px" src="' + thePath + loadPageId + '.jpg">\
+                    ');
+            }
+
+            //Go back to gallery
+            if (e.which == 71)
+            {
+                $("#goBackGallery").trigger("click");
+            }
         }
+    });
+
+    //Special searching in reader
+    $("#titleSearch").focusin(function ()
+    {
+        searchInReader = true;
+        console.log('searchInReader = true;');
+    });
+
+    $("#titleSearch").focusout(function ()
+    {
+        searchInReader = false;
+        console.log('searchInReader = false;');
     });
 
     //Handle loading left page
