@@ -12,6 +12,13 @@ if(empty($_GET["p"]))
 	$pageStart = 0;
 }
 
+$tagSearching = 1;
+if(empty($_GET["t"]))
+{
+	$tagSearching = 0;
+}
+
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 mysqli_set_charset($conn,"utf8");
@@ -26,14 +33,33 @@ else
 	// echo 'Connected successfully' . '<br>';
 }
 
+//Three modes? (now two modes), title search, tag search, and mixed mode
 //Split the Qstring to keywords
 //And then append to sql one by one
-$keywords = explode(" ", $q);
-$sql = "SELECT * FROM `manga` WHERE `title` LIKE '%".$keywords[0]."%'";
-foreach($keywords as $keyword)
+if($tagSearching == 0)
 {
-    $sql .= " AND `title` LIKE '%".$keyword."%'";
+	$keywords = explode(" ", $q);
+	$sql = "SELECT * FROM `manga` WHERE `title` LIKE '%".$keywords[0]."%'";
+	foreach($keywords as $keyword)
+	{
+	    $sql .= " OR `title` LIKE '%".$keyword."%'";
+		$sql .= " OR `contents` LIKE '%".$keyword."%'";
+	}
 }
+// else if($tagSearching == 2)
+// {
+//
+// }
+else if($tagSearching == 1)
+{
+	$keywords = explode(" ", $q);
+	$sql = "SELECT * FROM `manga` WHERE `contents` LIKE '%".$keywords[0]."%'";
+	foreach($keywords as $keyword)
+	{
+	    $sql .= " AND `contents` LIKE '%".$keyword."%'";
+	}
+}
+
 
 //Set how many pages does page shows
 $sql .= "ORDER BY `manga` . `mangaId` DESC LIMIT " . $pageStart . ", 20 ";
@@ -49,7 +75,7 @@ echo '
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properities -->
-    <title>Welcome to Hennojin</title>
+    <title>Hennojin-SearchResults</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="ui/semantic.min.css">
@@ -58,6 +84,12 @@ echo '
 
     <script>
         var indexPageNum = '.((int)($_GET["p"])).';
+		var tagSearching = '.((int)($_GET["t"])).';
+
+		if(tagSearching == 1)
+		{
+			window.localStorage["hennojinLastSearch"] = "'.$q.'";
+		}
     </script>
 
 </head>
@@ -76,7 +108,7 @@ echo '
                     <div id="mostViewed" class="item">Most viewed</div>
                     <div class="ui left icon input">
                         <i class="search icon"></i>
-                        <input id="titleSearch" name="search" placeholder="Title search..." type="text">
+                        <input id="titleSearch" name="search" placeholder="title or tags" type="text">
                     </div>
                 </div>
             </div>
@@ -121,20 +153,20 @@ echo '
     <div id="mainContainer">
         <div class="row">
             <div class="column">
-                <div class="ui message main">
+			<!--<div class="ui message main">
                     <h1 class="ui header">Hello, hennojins!</h1>
                     <p id="phpTest"></p>
                     <a class="ui purple button">See more &raquo;</a>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="ui inverted top attached segment">
             <div style="float: left">
             	<h2 id="mangaListStatus" style="margin:0px"></h2>
             </div>
-            <div style="float: left;margin-top:6px">
+            <div style="float: right;margin-top:6px">
                 <i id="indexPageLeft" class="left large chevron icon"></i>
-                <i>Page '.($pageStart / 20 + 1).'</i>
+                <i style="font-size: larger">Page '.($pageStart / 20 + 1).'</i>
                 <i id="indexPageRight" class="right large chevron icon"></i>
             </div>
         </div>
@@ -164,6 +196,12 @@ if ($result->num_rows > 0)
 		echo '</div>';
     }
 }
+// else
+// {
+// 	echo '<div class="column">
+// 			<h3>No results... TAT</h3>
+// 		</div>';
+// }
 
 echo'
                 </div>
@@ -174,7 +212,7 @@ echo'
     <!-- JS -->
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script>
-    	$("#mangaListStatus").html("Search Result : ");
+    	$("#mangaListStatus").html(window.localStorage["hennojinLastSearch"] + " : ");
     </script>
     <script src="ui/semantic.min.js"></script>
     <script src="js/init.js"></script>

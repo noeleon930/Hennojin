@@ -65,6 +65,11 @@ $(document).ready(function ()
             {
                 window.location.href = "search.php?q=" + window.localStorage["hennojinLastSearch"] + "&p=" + (indexPageNum - 1);
             }
+
+            if(tagSearching == 1)
+            {
+                window.location.href = "search.php?q=" + window.localStorage["hennojinLastSearch"] + "&p=" + (indexPageNum - 1) + "&t=1";
+            }
         }
     });
     $("body").on("click", "#indexPageRight", function ()
@@ -76,6 +81,11 @@ $(document).ready(function ()
         else
         {
             window.location.href = "search.php?q=" + window.localStorage["hennojinLastSearch"] + "&p=" + (indexPageNum + 1);
+        }
+
+        if(tagSearching == 1)
+        {
+            window.location.href = "search.php?q=" + window.localStorage["hennojinLastSearch"] + "&p=" + (indexPageNum + 1) + "&t=1";
         }
     });
 

@@ -38,7 +38,7 @@ echo '<!DOCTYPE html>
     <meta name="prVerify" content="8158e2e9d3bd3dbe5a19d30e76dff9b5" />
 
     <!-- Site Properities -->
-    <title>Welcome to Hennojin</title>
+    <title>Hennojin-Lobby</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="ui/semantic.min.css">
@@ -47,6 +47,7 @@ echo '<!DOCTYPE html>
 
     <script>
         var indexPageNum = '.((int)($_GET["p"])).';
+		var tagSearching = 0;
         window.localStorage["hennojinLastSearch"] = "";
     </script>
 
@@ -66,7 +67,7 @@ echo '<!DOCTYPE html>
                     <div id="mostViewed" class="item">Most viewed</div>
                     <div class="ui left icon input">
                         <i class="search icon"></i>
-                        <input id="titleSearch" name="search" placeholder="Title search..." type="text">
+                        <input id="titleSearch" name="search" placeholder="title or tags" type="text">
                     </div>
                 </div>
             </div>
@@ -113,18 +114,26 @@ echo '<!DOCTYPE html>
             <div class="column">
                 <div class="ui message main">
                     <h1 class="ui header">Hello, hennojins!</h1>
-                    <p id="phpTest"></p>
-                    <a class="ui purple button">See more &raquo;</a>
-                </div>
-            </div>
-        </div>
+					<div class="ui divided list">
+						<div class="item">
+							<div class="header">2015-03-25</div>
+							Tag searching is available now!
+						</div>
+						<div class="item">
+							<div class="header">2015-03-14</div>
+							Alpha online. But registering and user functions are still under construction ^w^
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         <div class="ui inverted top attached segment">
             <div style="float: left">
             	<h2 id="mangaListStatus" style="margin:0px"></h2>
             </div>
-            <div style="float: left;margin-top:6px">
+            <div style="float: right;margin-top:6px">
                 <i id="indexPageLeft" class="left large chevron icon"></i>
-                <i>Page '.($pageStart / 20 + 1).'</i>
+                <i style="font-size: larger">Page '.($pageStart / 20 + 1).'</i>
                 <i id="indexPageRight" class="right large chevron icon"></i>
             </div>
     	</div>

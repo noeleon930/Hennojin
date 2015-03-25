@@ -20,6 +20,7 @@ $(function ()
         tmpTitle = tmpTitle.substring(0, 40) + "...";
     }
     $('#mangaTitle').html(tmpTitle);
+    $('#mangaTitleBrowser').html(window.sessionStorage["hennojinMangaTitle"]);
 
     //Border check
     if (loadPageId < 0) loadPageId = 0;

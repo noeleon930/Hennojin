@@ -8,7 +8,7 @@
     <meta name="prVerify" content="8158e2e9d3bd3dbe5a19d30e76dff9b5" />
 
     <!-- Site Properities -->
-    <title>Welcome to Hennojin Alpha</title>
+    <title>Hennojin-Gallery</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="ui/semantic.min.css">
@@ -66,7 +66,8 @@
             $theDescription = $row["description"];
         }
     }
-echo'<script>
+echo '
+    <script>
         var thePath = "'.$thePath.'";
         var totalPage = '.$thePages.';
         var theTitle = "'.$theTitle.'";
@@ -89,7 +90,7 @@ echo'<script>
                     <div id="mostViewed" class="item">Most viewed</div>
                     <div class="ui left icon input">
                         <i class="search icon"></i>
-                        <input id="titleSearch" name="search" placeholder="Title search..." type="text">
+                        <input id="titleSearch" name="search" placeholder="title or tags" type="text">
                     </div>
                 </div>
             </div>
@@ -155,12 +156,27 @@ echo'<script>
                                         <div class="ui purple horizontal label">Parody</div>
                                         '.$theParody.'
                                     </a>
-                                    <a class="item">
+                                    <div class="item">
                                         <div class="ui purple horizontal label">Contents</div>
-                                        <div class="ui segment" style="margin-top:5px;padding:5px;">
-                                            <p id="theContents">'.$theContents.'</p>
-                                        </div>
-                                    </a>
+                                        <div class="ui segment" style="margin-top:5px;padding:5px;">';
+
+$tags = explode(", ", $theContents);
+$tagsPerRow = 0;
+foreach($tags as $tag)
+{
+    $tagsPerRow = $tagsPerRow + 1;
+    $ttag = str_replace(' ', '&nbsp;', $tag);
+    echo '<a href="search.php?q='.$tag.'&t=1">'.$ttag.'</a>&nbsp;&nbsp;';
+    if($tagsPerRow > 5)
+    {
+        echo'<br>';
+        $tagsPerRow = 0;
+    }
+}
+
+
+echo '</div>
+                                    </div>
                                     <a id="theLanguage" class="item">
                                         <div class="ui purple horizontal label">Language</div>
                                         '.$theLanguage.'
@@ -267,12 +283,12 @@ echo'<script>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <!-- Ajax generated dynamically -->
                     <div id="comments" class="ui grid">
-                        
+
                     </div>
                 </div>
                 <!-- Comments End -->
