@@ -1,6 +1,6 @@
 body
 {
-    background: none repeat scroll 0% 0% #7872A1;
+    background: none repeat scroll 0% 0% #615E76;
 }
 
 #navbar
@@ -28,12 +28,17 @@ body
 
 .ui.segment
 {
-    background-color: #B9B5D7;
+    background-color: #777491;
+}
+
+.ui.inverted.attached.segment, .ui.inverted.block.segment
+{
+    border-color: #3A3654;
 }
 
 .ui.inverted.black.segment, .ui.inverted.segment
 {
-    background-color: #564F8A !important;
+    background-color: #3A3654 !important;
     color: #FFF !important;
     padding: 5px;
     padding-left: 14px;
@@ -41,7 +46,33 @@ body
 
 .ui.segment.attached
 {
-    border: 1px solid #564F8A;
+    border: 1px solid #3A3654;
+}
+
+.ui.list .item a:hover
+{
+    color: #FFF !important;
+    background: #E36E6E;
+}
+
+.ui.list .item a
+{
+    color: #36363F !important;
+}
+
+.ui.inverted.purple.menu, .ui.inverted.purple.pointing.menu .active.item::after
+{
+    background-color: #3A3654;
+}
+
+.ui.purple.label, .ui.purple.labels .label
+{
+    background-color: #4F4C69!important;
+}
+
+.ui.selection.list .list > .item, .ui.selection.list > .item
+{
+    color: #36363F;
 }
 
 #rightPage

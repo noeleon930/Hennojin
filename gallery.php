@@ -161,17 +161,27 @@ echo '
                                         <div class="ui segment" style="margin-top:5px;padding:5px;">';
 
 $tags = explode(", ", $theContents);
+$tagsNum = count($tags);
 $tagsPerRow = 0;
 foreach($tags as $tag)
 {
     $tagsPerRow = $tagsPerRow + 1;
     $ttag = str_replace(' ', '&nbsp;', $tag);
-    echo '<a href="search.php?q='.$tag.'&t=1">'.$ttag.'</a>&nbsp;&nbsp;';
+    echo '<a href="search.php?q='.$tag.'&t=1">'.$ttag.'</a>';
+
+    //Seperate with ','
+    if($tagsNum > 1)
+    {
+        echo ', &nbsp;';
+    }
+
     if($tagsPerRow > 5)
     {
         echo'<br>';
         $tagsPerRow = 0;
     }
+
+    $tagsNum = $tagsNum - 1;
 }
 
 
