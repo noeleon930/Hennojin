@@ -32,17 +32,17 @@ $(document).ready(function ()
     });
 
     //Load manga page
-    $("body").on("click", "#viewManga", function ()
-    {
-        window.sessionStorage["hennojinMangaID"] = $(this).attr('name');
-        window.location.href = "gallery.php?id=" + $(this).attr('name');
-    });
+    // $("body").on("click", "#viewManga", function ()
+    // {
+    //     window.sessionStorage["hennojinMangaID"] = $(this).attr('name');
+    //     window.location.href = "gallery.php?id=" + $(this).attr('name');
+    // });
 
     //Add it to favorite list
-    $("body").on("click", "#addFavorite", function ()
-    {
-        console.log('addFavorite clicked');
-    });
+    // $("body").on("click", "#addFavorite", function ()
+    // {
+    //     console.log('addFavorite clicked');
+    // });
 
     //From RNA
     $("body").on("click", ".coverImgPart", function ()

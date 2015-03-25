@@ -72,6 +72,7 @@ echo '
         var totalPage = '.$thePages.';
         var theTitle = "'.$theTitle.'";
         var mangaId = '.$theMangaId.';
+        window.sessionStorage["hennojinMangaID"] = mangaId;
     </script>
 
 </head>
