@@ -34,6 +34,10 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
+    //Updating views number
+    $addingViews = "UPDATE `manga` SET views = views + 1 WHERE `mangaId` = ".$theMangaId;
+    $conn->query($addingViews);
+
     $sql = "SELECT * FROM `manga` WHERE `mangaId` = ".$theMangaId;
     $result = $conn->query($sql);
 
