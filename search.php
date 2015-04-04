@@ -42,8 +42,9 @@ if($tagSearching == 0)
 	$sql = "SELECT * FROM `manga` WHERE `title` LIKE '%".$keywords[0]."%'";
 	foreach($keywords as $keyword)
 	{
-	    $sql .= " OR `title` LIKE '%".$keyword."%'";
+	    $sql .= " AND `title` LIKE '%".$keyword."%'";
 		$sql .= " OR `contents` LIKE '%".$keyword."%'";
+		$sql .= " OR `artist` LIKE '%".$keyword."%'";
 	}
 }
 // else if($tagSearching == 2)
@@ -108,7 +109,7 @@ echo '
                     <div id="mostViewed" class="item">Most viewed</div>
                     <div class="ui left icon input">
                         <i class="search icon"></i>
-                        <input id="titleSearch" name="search" placeholder="title or tags" type="text">
+                        <input id="titleSearch" name="search" placeholder="Search for..." type="text">
                     </div>
                 </div>
             </div>
@@ -142,7 +143,10 @@ echo '
                         </div>
                         <div class="divider" style="margin:0px"></div>
                         <div id="loginButton" class="item" onclick="login()">
-                            Login
+							Sign in
+                        </div>
+						<div id="signupButton" class="item" onclick="signup()">
+                            Sign up
                         </div>
                     </div>
                 </div>

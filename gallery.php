@@ -91,7 +91,7 @@ echo '
                     <div id="mostViewed" class="item">Most viewed</div>
                     <div class="ui left icon input">
                         <i class="search icon"></i>
-                        <input id="titleSearch" name="search" placeholder="title or tags" type="text">
+                        <input id="titleSearch" name="search" placeholder="Search for..." type="text">
                     </div>
                 </div>
             </div>
@@ -125,7 +125,10 @@ echo '
                         </div>
                         <div class="divider" style="margin:0px"></div>
                         <div id="loginButton" class="item" onclick="login()">
-                            Login
+                            Sign in
+                        </div>
+                        <div id="signupButton" class="item" onclick="signup()">
+                            Sign up
                         </div>
                     </div>
                 </div>

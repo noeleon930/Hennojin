@@ -67,7 +67,7 @@ echo '<!DOCTYPE html>
                     <div id="mostViewed" class="item">Most viewed</div>
                     <div class="ui left icon input">
                         <i class="search icon"></i>
-                        <input id="titleSearch" name="search" placeholder="title or tags" type="text">
+                        <input id="titleSearch" name="search" placeholder="Search for..." type="text">
                     </div>
                 </div>
             </div>
@@ -101,7 +101,11 @@ echo '<!DOCTYPE html>
                         </div>
                         <div class="divider" style="margin:0px"></div>
                         <div id="loginButton" class="item" onclick="login()">
-                            Login
+							Sign in
+                        </div>
+						<div class="divider" style="margin:0px"></div>
+                        <div id="signupButton" class="item" onclick="signup()">
+                            Sign up
                         </div>
                     </div>
                 </div>
@@ -115,6 +119,10 @@ echo '<!DOCTYPE html>
                 <div class="ui message main">
                     <h1 class="ui header">Hello, hennojins!</h1>
 					<div class="ui divided list">
+						<div class="item">
+							<div class="header">2015-04-05</div>
+							Hennojin 0.8.1 :: Improved searching and Sign-up is available now!
+						</div>
 						<div class="item">
 							<div class="header">2015-03-25</div>
 							Tag searching is available now!
