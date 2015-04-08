@@ -121,7 +121,7 @@ echo '<!DOCTYPE html>
 					<div class="ui divided list">
 						<div class="item">
 							<div class="header">2015-04-05</div>
-							Hennojin 0.8.1 :: Improved searching and Sign-up is available now!
+							Hennojin 0.8.1 :: Improved searching and Sign-up are available now! So don\'t forget to sign up! ^w^
 						</div>
 						<div class="item">
 							<div class="header">2015-03-25</div>

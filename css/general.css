@@ -60,6 +60,11 @@ body
     color: #36363F !important;
 }
 
+.ui.menu .item
+{
+    line-height: 0.9;
+}
+
 .ui.inverted.purple.menu, .ui.inverted.purple.pointing.menu .active.item::after
 {
     background-color: #3A3654;
