@@ -37,7 +37,7 @@
                 </div>
             </div>
             <a id="tag" class="active item" href="tag.html">
-                <i class="tags icon"></i> Tag
+                <i class="tags icon"></i> Tags
             </a>
 
             <div class="right menu">
@@ -67,6 +67,7 @@
                         <div id="loginButton" class="item" onclick="login()">
                             Sign in
                         </div>
+                        <div class="divider" style="margin:0px"></div>
                         <div id="signupButton" class="item" onclick="signup()">
                             Sign up
                         </div>
@@ -83,27 +84,46 @@
                     <div class="ui inverted segment">
                         <div class="ui inverted relaxed divided list">
                             <div class="item">
-                                <div class="content">
-                                    <div class="header">The tags for...</div>
-                                    <br>
-                                    <div class="ui inverted purple button">Artist</div>
-                                    <div class="ui inverted purple button">Parody</div>
-                                    <div class="ui inverted purple button">Contents</div>
-                                    <br>
+                                <div class="content noselecttext">
+                                    <div class="header" style="margin-bottom: 5px">The tags for...</div>
+                                    <div id="tags_artists" class="tags_select_target ui inverted purple button">Artist</div>
+                                    <div id="tags_contents" class="tags_select_target ui inverted purple button">Content</div>
+                                    <div id="tags_parodies" class="tags_select_target ui inverted purple button">Parody</div>
+                                    <div class="header" style="margin-top: 10px; margin-bottom: 5px">Starts with...</div>
+                                    <div id="tags_startswith_a" class="tags_select_startswith ui inverted purple button" style="padding: 10px">A</div>
+                                    <div id="tags_startswith_b" class="tags_select_startswith ui inverted purple button" style="padding: 10px">B</div>
+                                    <div id="tags_startswith_c" class="tags_select_startswith ui inverted purple button" style="padding: 10px">C</div>
+                                    <div id="tags_startswith_d" class="tags_select_startswith ui inverted purple button" style="padding: 10px">D</div>
+                                    <div id="tags_startswith_e" class="tags_select_startswith ui inverted purple button" style="padding: 10px">E</div>
+                                    <div id="tags_startswith_f" class="tags_select_startswith ui inverted purple button" style="padding: 10px">F</div>
+                                    <div id="tags_startswith_g" class="tags_select_startswith ui inverted purple button" style="padding: 10px">G</div>
+                                    <div id="tags_startswith_h" class="tags_select_startswith ui inverted purple button" style="padding: 10px">H</div>
+                                    <div id="tags_startswith_i" class="tags_select_startswith ui inverted purple button" style="padding: 10px">I</div>
+                                    <div id="tags_startswith_j" class="tags_select_startswith ui inverted purple button" style="padding: 10px">J</div>
+                                    <div id="tags_startswith_k" class="tags_select_startswith ui inverted purple button" style="padding: 10px">K</div>
+                                    <div id="tags_startswith_l" class="tags_select_startswith ui inverted purple button" style="padding: 10px">L</div>
+                                    <div id="tags_startswith_m" class="tags_select_startswith ui inverted purple button" style="padding: 10px">M</div>
+                                    <div id="tags_startswith_n" class="tags_select_startswith ui inverted purple button" style="padding: 10px">N</div>
+                                    <div id="tags_startswith_o" class="tags_select_startswith ui inverted purple button" style="padding: 10px">O</div>
+                                    <div id="tags_startswith_p" class="tags_select_startswith ui inverted purple button" style="padding: 10px">P</div>
+                                    <div id="tags_startswith_q" class="tags_select_startswith ui inverted purple button" style="padding: 10px">Q</div>
+                                    <div id="tags_startswith_r" class="tags_select_startswith ui inverted purple button" style="padding: 10px">R</div>
+                                    <div id="tags_startswith_s" class="tags_select_startswith ui inverted purple button" style="padding: 10px">S</div>
+                                    <div id="tags_startswith_t" class="tags_select_startswith ui inverted purple button" style="padding: 10px">T</div>
+                                    <div id="tags_startswith_u" class="tags_select_startswith ui inverted purple button" style="padding: 10px">U</div>
+                                    <div id="tags_startswith_v" class="tags_select_startswith ui inverted purple button" style="padding: 10px">V</div>
+                                    <div id="tags_startswith_w" class="tags_select_startswith ui inverted purple button" style="padding: 10px">W</div>
+                                    <div id="tags_startswith_x" class="tags_select_startswith ui inverted purple button" style="padding: 10px">X</div>
+                                    <div id="tags_startswith_y" class="tags_select_startswith ui inverted purple button" style="padding: 10px">Y</div>
+                                    <div id="tags_startswith_z" class="tags_select_startswith ui inverted purple button" style="padding: 10px">Z</div>
+                                    <!-- <div id="tags_startswith_Others" class="tags_select_startswith ui inverted purple button" style="padding: 10px">Others</div> -->
+                                    <div class="header" style="margin-top: 10px; margin-bottom: 5px">Tags generated:</div>
+                                    <div>
+                                        <div id="tagGenerated" class="ui animated list" style="padding-top:0px">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- <div class="item">
-                                <div class="content">
-                                    <div class="header">Poodle</div>
-                                    A poodle, its pretty basic
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="content">
-                                    <div class="header">Paulo</div>
-                                    He's also a dog
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -117,6 +137,7 @@
     <script src="js/init.js"></script>
     <script src="js/user.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/tag.js"></script>
 </body>
 
 </html>

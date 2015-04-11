@@ -72,7 +72,7 @@ echo '<!DOCTYPE html>
                 </div>
             </div>
             <a id="tag" class="item" href="tag.html">
-                <i class="tags icon"></i> Tag
+                <i class="tags icon"></i> Tags
             </a>
 
             <div class="right menu">
@@ -119,6 +119,10 @@ echo '<!DOCTYPE html>
                 <div class="ui message main">
                     <h1 class="ui header">Hello, hennojins!</h1>
 					<div class="ui divided list">
+						<div class="item">
+							<div class="header">2015-04-12</div>
+							Hennojin 0.8.2 :: More improved searching and TAGS is available, an advanced search function!
+						</div>
 						<div class="item">
 							<div class="header">2015-04-05</div>
 							Hennojin 0.8.1 :: Improved searching and Sign-up are available now! So don\'t forget to sign up! ^w^

@@ -5,7 +5,8 @@ $username = "herreis_noel";
 $password = "12241224";
 $dbname = "herreis_wrdp1";
 
-$q = $_GET["q"];
+// $q = $_GET["q"];
+$q = str_replace("'", "''", $_GET["q"]);
 $pageStart = (int)$_GET["p"] * 20;
 if(empty($_GET["p"]))
 {
@@ -18,6 +19,35 @@ if(empty($_GET["t"]))
 	$tagSearching = 0;
 }
 
+$parodySearching = 1;
+if(empty($_GET["parodies"]))
+{
+	$parodySearching = 0;
+}
+else
+{
+	$tagSearching = -1;
+}
+
+$artistSearching = 1;
+if(empty($_GET["artists"]))
+{
+	$artistSearching = 0;
+}
+else
+{
+	$tagSearching = -1;
+}
+
+$contentSearching = 1;
+if(empty($_GET["contents"]))
+{
+	$contentSearching = 0;
+}
+else
+{
+	$tagSearching = -1;
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -33,10 +63,46 @@ else
 	// echo 'Connected successfully' . '<br>';
 }
 
-//Three modes? (now two modes), title search, tag search, and mixed mode
+//four modes? title search, tag search, artist search, parody search and mixed mode
 //Split the Qstring to keywords
 //And then append to sql one by one
-if($tagSearching == 0)
+if($tagSearching == 1)
+{
+	$keywords = explode(" ", $q);
+	$sql = "SELECT * FROM `manga` WHERE `contents` LIKE '%".$keywords[0]."%'";
+	foreach($keywords as $keyword)
+	{
+	    $sql .= " AND `contents` LIKE '%".$keyword."%'";
+	}
+}
+else if($parodySearching == 1)
+{
+	$keywords = explode(" ", $q);
+	$sql = "SELECT * FROM `manga` WHERE `parody` LIKE '%".$keywords[0]."%'";
+	foreach($keywords as $keyword)
+	{
+	    $sql .= " AND `parody` LIKE '%".$keyword."%'";
+	}
+}
+else if($artistSearching == 1)
+{
+	$keywords = explode(" ", $q);
+	$sql = "SELECT * FROM `manga` WHERE `artist` LIKE '%".$keywords[0]."%'";
+	foreach($keywords as $keyword)
+	{
+	    $sql .= " AND `artist` LIKE '%".$keyword."%'";
+	}
+}
+else if($contentSearching == 1)
+{
+	$keywords = explode(" ", $q);
+	$sql = "SELECT * FROM `manga` WHERE `contents` LIKE '%".$keywords[0]."%'";
+	foreach($keywords as $keyword)
+	{
+	    $sql .= " AND `contents` LIKE '%".$keyword."%'";
+	}
+}
+else if($tagSearching == 0)
 {
 	$keywords = explode(" ", $q);
 	$sql = "SELECT * FROM `manga` WHERE `title` LIKE '%".$keywords[0]."%'";
@@ -45,19 +111,7 @@ if($tagSearching == 0)
 	    $sql .= " AND `title` LIKE '%".$keyword."%'";
 		$sql .= " OR `contents` LIKE '%".$keyword."%'";
 		$sql .= " OR `artist` LIKE '%".$keyword."%'";
-	}
-}
-// else if($tagSearching == 2)
-// {
-//
-// }
-else if($tagSearching == 1)
-{
-	$keywords = explode(" ", $q);
-	$sql = "SELECT * FROM `manga` WHERE `contents` LIKE '%".$keywords[0]."%'";
-	foreach($keywords as $keyword)
-	{
-	    $sql .= " AND `contents` LIKE '%".$keyword."%'";
+		$sql .= " OR `parody` LIKE '%".$keyword."%'";
 	}
 }
 
@@ -86,10 +140,20 @@ echo '
     <script>
         var indexPageNum = '.((int)($_GET["p"])).';
 		var tagSearching = '.((int)($_GET["t"])).';
+		var contentSearching = '.((int)($contentSearching)).';
+		var artistSearching = '.((int)($artistSearching)).';
+		var parodySearching = '.((int)($parodySearching)).';
 
 		if(tagSearching == 1)
 		{
 			window.localStorage["hennojinLastSearch"] = "'.$q.'";
+		}
+		else
+		{
+			if(contentSearching == 1 || artistSearching == 1 || parodySearching == 1)
+			{
+				window.localStorage["hennojinLastSearch"] = "'.$q.'";
+			}
 		}
     </script>
 
@@ -114,7 +178,7 @@ echo '
                 </div>
             </div>
             <a id="tag" class="item" href="tag.html">
-                <i class="tags icon"></i> Tag
+                <i class="tags icon"></i> Tags
             </a>
 
             <div class="right menu">
@@ -145,6 +209,7 @@ echo '
                         <div id="loginButton" class="item" onclick="login()">
 							Sign in
                         </div>
+                        <div class="divider" style="margin:0px"></div>
 						<div id="signupButton" class="item" onclick="signup()">
                             Sign up
                         </div>
@@ -166,7 +231,7 @@ echo '
         </div>
         <div class="ui inverted top attached segment">
             <div style="float: left">
-            	<h2 id="mangaListStatus" style="margin:0px"></h2>
+            	<h2 id="mangaListStatus" style="margin:0px">'.str_replace("''", "'", htmlspecialchars($q)).' : </h2>
             </div>
             <div style="float: right;margin-top:6px">
                 <i id="indexPageLeft" class="left large chevron icon"></i>
@@ -214,9 +279,9 @@ echo'
 
     <!-- JS -->
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script>
+	<!--<script>
     	$("#mangaListStatus").html(window.localStorage["hennojinLastSearch"] + " : ");
-    </script>
+    </script>-->
     <script src="ui/semantic.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/index.js"></script>

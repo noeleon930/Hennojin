@@ -59,7 +59,7 @@
         {
             $theTitle = $row["title"];
             $theArtist = $row["artist"];
-            $theParody = $row["parody"];
+            $theParody = htmlspecialchars($row["parody"]);
             $theContents = $row["contents"];
             $theLanguage = $row["language"];
             $theCategory = $row["category"];
@@ -100,7 +100,7 @@ echo '
                 </div>
             </div>
             <a id="tag" class="item" href="tag.html">
-                <i class="tags icon"></i> Tag
+                <i class="tags icon"></i> Tags
             </a>
 
             <div class="right menu">
@@ -131,6 +131,7 @@ echo '
                         <div id="loginButton" class="item" onclick="login()">
                             Sign in
                         </div>
+                        <div class="divider" style="margin:0px"></div>
                         <div id="signupButton" class="item" onclick="signup()">
                             Sign up
                         </div>
