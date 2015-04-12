@@ -54,7 +54,7 @@ $(function ()
 
     //Loading image
     $("#loadImg").append('\
-        <img id="loadImgBox" class="ui bordered image" style="max-width: 800px" src="' + thePath + loadPageId + '.jpg">\
+        <img id="loadImgBox" class="ui bordered image" style="max-width: 900px" src="' + thePath + loadPageId + '.jpg">\
         <img id="loadImgBox" class="ui bordered image" style="display: none;" src="' + thePath + (loadPageId + 1) + '.jpg">\
 		');
 

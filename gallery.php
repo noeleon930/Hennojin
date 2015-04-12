@@ -79,6 +79,13 @@ echo '
         window.sessionStorage["hennojinMangaID"] = mangaId;
     </script>
 
+    <script type="text/javascript">
+		var _prvar=_prvar||new Object();
+		(function(pa,s){if(document.getElementById("pr2b7f05a9"))return false;
+		pa=document.createElement("script");pa.type="text/javascript";pa.async=true;pa.id="pr2b7f05a9";pa.src="//prscripts.com/pub.js";
+		s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(pa,s);})();
+	</script>
+
 </head>
 <body>
     <div class="ui fixed large purple inverted menu" style="z-index: 16888">
@@ -104,6 +111,15 @@ echo '
             </a>
 
             <div class="right menu">
+                <a id="fb" class="item" href="https://www.facebook.com/hennojin">
+                    <i class="facebook square icon"></i>
+                </a>
+                <a id="twitter" class="item" href="https://twitter.com/Hennojin">
+                    <i class="twitter square icon"></i>
+                </a>
+                <!--<a id="patreon" class="item" href="https://www.patreon.com/hennojin">
+                    <img src="img/patreon.png">
+                </a>-->
                 <a id="following" class="item">
                     <i class="checkmark box icon"></i> Following
                 </a>
@@ -314,41 +330,13 @@ echo '</div>
             </div>
         </div>
         <div style="z-index: 10; position: absolute; right: 3px; top: 43px;">
-			<script type="text/javascript">
-			ad_idzone = "1440996";
-			ad_width = "120";
-			ad_height = "600";
-			</script>
-			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
-			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1440996" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1440996&output=img&type=120x600" width="120" height="600"></a></noscript>
+			<div class="pr-widget" id="pr-c3lr" style="height:600px;width:120px;"></div>
 		</div>
 		<div style="z-index: 10; position: absolute; right: 3px; top: 643px;">
-			<script type="text/javascript">
-			ad_idzone = "1441002";
-			ad_width = "120";
-			ad_height = "600";
-			</script>
-			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
-			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1441002" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1441002&output=img&type=120x600" width="120" height="600"></a></noscript>
+			<div class="pr-widget" id="pr-c3ls" style="height:600px;width:120px;"></div>
 		</div>
-		<div>
-			<script type="text/javascript">
-			ad_idzone = "1441022";
-			ad_width = "728";
-			ad_height = "90";
-			</script>
-			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
-			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1441022" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1441022&output=img&type=728x90" width="728" height="90"></a></noscript>
-		</div>
-		<div>
-			<script type="text/javascript">
-			ad_idzone = "1441026";
-			ad_width = "728";
-			ad_height = "90";
-			</script>
-			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
-			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1441026" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1441026&output=img&type=728x90" width="728" height="90"></a></noscript>
-		</div>
+		<div class="pr-widget" id="pr-c3ln" style="height:156px;width:1000px;"></div>
+		<div class="pr-widget" id="pr-c3lq" style="height:216px;width:760px;"></div>
     </div>
 
 
