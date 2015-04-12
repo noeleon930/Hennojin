@@ -1,3 +1,6 @@
 research/
 *.yml
+*.sql
 *.txt
+*.py
+*.pyc
