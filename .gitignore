@@ -1,6 +1,3 @@
-research/artists.txt
+research/
 *.yml
-research/tags.sql
 *.txt
-*.yml
-research/tags.sql
