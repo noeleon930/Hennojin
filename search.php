@@ -275,6 +275,42 @@ echo'
                 </div>
             </div>
         </div>
+		<div style="z-index: 10; position: absolute; right: 3px; top: 43px;">
+			<script type="text/javascript">
+			ad_idzone = "1440996";
+			ad_width = "120";
+			ad_height = "600";
+			</script>
+			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
+			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1440996" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1440996&output=img&type=120x600" width="120" height="600"></a></noscript>
+		</div>
+		<div style="z-index: 10; position: absolute; right: 3px; top: 643px;">
+			<script type="text/javascript">
+			ad_idzone = "1441002";
+			ad_width = "120";
+			ad_height = "600";
+			</script>
+			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
+			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1441002" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1441002&output=img&type=120x600" width="120" height="600"></a></noscript>
+		</div>
+		<div>
+			<script type="text/javascript">
+			ad_idzone = "1441022";
+			ad_width = "728";
+			ad_height = "90";
+			</script>
+			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
+			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1441022" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1441022&output=img&type=728x90" width="728" height="90"></a></noscript>
+		</div>
+		<div>
+			<script type="text/javascript">
+			ad_idzone = "1441026";
+			ad_width = "728";
+			ad_height = "90";
+			</script>
+			<script type="text/javascript" src="https://ads.exoclick.com/ads.js"></script>
+			<noscript><a href="http://main.exoclick.com/img-click.php?idzone=1441026" target="_blank"><img src="https://syndication.exoclick.com/ads-iframe-display.php?idzone=1441026&output=img&type=728x90" width="728" height="90"></a></noscript>
+		</div>
     </div>
 
     <!-- JS -->
