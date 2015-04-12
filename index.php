@@ -190,7 +190,7 @@ if ($result->num_rows > 0)
 		            echo '<div class="content">';
 		                echo '<div class="center">';
 		                    echo '<h4 class="ui inverted header">'.$partA.'</h4>';
-		                    echo '<a href="gallery.php?id='.$row["mangaId"].'" id="viewManga" class="ui button">View</a>';
+		                    echo '<a href="gallery.php?id='.$row["mangaId"].'" id="viewManga" class="ui button" style="padding: 7px; padding-left: 14px; padding-right: 14px;">View</a>';
 		               echo ' </div>';
 		            echo '</div>';
 		        echo '</div>';
