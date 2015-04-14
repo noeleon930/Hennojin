@@ -11,24 +11,24 @@
 <body>
     <br> 1. Manga's ID :
     <br>
-    <input type="number" id="mangaId">
+    <input type="number" id="mangaId" style="width:300px">
     <br> 2. Manga's title (English but not romaji) :
     <br>
-    <input type="text" id="title_en">
+    <input type="text" id="title_en" style="width:300px">
     <br> 3. Manga's title (Japanese) :
     <br>
-    <input type="text" id="title_jp">
+    <input type="text" id="title_jp" style="width:300px">
     <br> 4. Artists :
     <br>
     <div id="artists">
-        <input type="text" class="artist">
+        <input type="text" class="artist" style="width:300px">
         <button type="button" onclick="addArtist()">more...</button>
         <br>
     </div>
     5. Parodies :
     <br>
     <div id="parodies">
-        <input type="text" class="parody">
+        <input type="text" class="parody" style="width:300px">
         <button type="button" onclick="addParody()">more...</button>
         <br>
     </div>
@@ -39,22 +39,29 @@
     </div>
     7. Language :
     <br>
-    <input type="text" id="language" value="English">
+    <input type="text" id="language" value="English" style="width:300px">
     <br> 8. Description :
     <br>
-    <textarea id="description"></textarea>
+    <textarea id="description" style="width:300px"></textarea>
     <br> 9. Category (Manga, Doujinshi, etc...) :
     <br>
-    <input type="text" id="category">
+    <input type="text" id="category" style="width:300px">
     <br> 10. Number of page :
     <br>
-    <input type="number" id="pages">
+    <input type="number" id="pages" style="width:300px">
     <br> 11. The source :
     <br>
-    <input type="text" id="crawlFrom" value="exhentai">
+    <input type="text" id="crawlFrom" value="exhentai" style="width:300px">
     <br>
-    <button type="button" id="confirmButton">Confirm</button>
-    <button type="button" id="submitButton">Confirm</button>
+    <br>
+    <button type="button" id="checkButton" onclick="confirm()">Check</button>
+    <br>
+    <div id="outputResult">
+    </div>
+    <br>
+    <button type="button" id="submitButton" onclick="submit()">Submit</button>
+    <div id="phpResult">
+    </div>
 
 </body>
 
