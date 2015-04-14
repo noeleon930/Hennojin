@@ -142,3 +142,8 @@ function submit()
 		});
 	}
 }
+
+function rest()
+{
+	location.reload(true);
+}
