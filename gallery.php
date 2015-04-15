@@ -121,7 +121,6 @@ echo '
                     <img src="img/patreon.png">
                 </a>-->
                 <a id="following" class="item">
-                    <i class="checkmark box icon"></i> Following
                 </a>
                 <div class="ui dropdown item">
                     <i class="user icon"></i>
@@ -146,10 +145,6 @@ echo '
                         <div class="divider" style="margin:0px"></div>
                         <div id="loginButton" class="item" onclick="login()">
                             Sign in
-                        </div>
-                        <div class="divider" style="margin:0px"></div>
-                        <div id="signupButton" class="item" onclick="signup()">
-                            Sign up
                         </div>
                     </div>
                 </div>

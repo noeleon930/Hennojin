@@ -17,15 +17,30 @@ $(function ()
 		{
 		    window.localStorage["hennojinUserNickName"] = r;
 		});
+
+        //Change hello to user nick name
+        $('#helloHeader').html('Hello, ' + window.localStorage["hennojinUserNickName"] + '!');
+        //Change to following
+        $('#following').html('<i class="plus square outline icon"></i> Following');
     }
     else if (window.localStorage["hennojinLoggedIn"] == "no")
     {
-
+        $('#following').html('<i id="signupInFollowing" class="checkmark box icon"></i> Signup');
     }
     else
     {
         window.localStorage["hennojinLoggedIn"] = "no";
+        $('#following').html('<i id="signupInFollowing" class="checkmark box icon"></i> Signup');
     }
+
+    //signup or following?
+    $("body").on("click", "#following", function ()
+    {
+        if(window.localStorage["hennojinLoggedIn"] == "no")
+        {
+            signup();
+        }
+    });
 
     $("#loginId").focus(function ()
     {

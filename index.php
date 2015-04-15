@@ -90,7 +90,6 @@ echo '<!DOCTYPE html>
 					<i class="twitter square icon"></i>
 				</a>
 				<a id="following" class="item">
-                    <i class="checkmark box icon"></i> Following
                 </a>
                 <div class="ui dropdown item">
                     <i class="user icon"></i>
@@ -116,10 +115,6 @@ echo '<!DOCTYPE html>
                         <div id="loginButton" class="item" onclick="login()">
 							Sign in
                         </div>
-						<div class="divider" style="margin:0px"></div>
-                        <div id="signupButton" class="item" onclick="signup()">
-                            Sign up
-                        </div>
                     </div>
                 </div>
             </div>
@@ -131,7 +126,7 @@ echo '<!DOCTYPE html>
             <div class="column">
                 <div class="ui message main">
                     <!--<h1 class="ui header">Hello, hennojins!</h1>-->
-					<div class="header" style="font-size:x-large">
+					<div id="helloHeader" class="header" style="font-size:x-large">
 						Hello, Hennojins!
 					</div>
 					<p style="margin-bottom:2px">Hennojin is a free platform for hentai lover to express their love for hentai manga and doujinshi.</p>
