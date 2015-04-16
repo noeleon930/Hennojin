@@ -144,7 +144,7 @@ echo '
                         </div>
                         <div class="divider" style="margin:0px"></div>
                         <div id="loginButton" class="item" onclick="login()">
-                            Sign in
+                            <i class="sign in icon"></i>Sign in
                         </div>
                     </div>
                 </div>

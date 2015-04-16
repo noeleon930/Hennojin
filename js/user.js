@@ -11,7 +11,7 @@ $(function ()
             <div id="profile" class="item">Profile</div>\
             <div id="favorites" class="item">Favorites</div>\
             <div class="divider" style="margin:0px"></div>\
-            <div id="logoutButton" class="item" onclick="logout()">Sign out</div>\
+            <div id="logoutButton" class="item" onclick="logout()"><i class="sign out icon"></i>Sign out</div>\
         ');
 		$.get("/hennojin/php/getUserNickName.php?" + "userId=" + window.localStorage["hennojinUserId"], function (r)
 		{
