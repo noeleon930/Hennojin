@@ -132,6 +132,9 @@ function submit()
     if (pass == false) alert('Something is empty, plz check!');
     else
     {
+        title = title.replace(/\'/g, '\\\'');
+        description = description.replace(/\'/g, '\\\'');
+
         var item = {
             "mangaId": mangaId,
             "title": title,
