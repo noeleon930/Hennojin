@@ -35,7 +35,7 @@ echo '<!DOCTYPE html>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="prVerify" content="8158e2e9d3bd3dbe5a19d30e76dff9b5" />
+	<!--<meta name="prVerify" content="8158e2e9d3bd3dbe5a19d30e76dff9b5" />-->
 
     <!-- Site Properities -->
     <title>Hennojin - One of the Best Source for Hentai Manga and Doujinshi</title>
@@ -51,12 +51,12 @@ echo '<!DOCTYPE html>
         window.localStorage["hennojinLastSearch"] = "";
     </script>
 
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		var _prvar=_prvar||new Object();
 		(function(pa,s){if(document.getElementById("pr2b7f05a9"))return false;
 		pa=document.createElement("script");pa.type="text/javascript";pa.async=true;pa.id="pr2b7f05a9";pa.src="//prscripts.com/pub.js";
 		s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(pa,s);})();
-	</script>
+	</script>-->
 
 </head>
 <body>
@@ -204,14 +204,14 @@ if ($result->num_rows > 0)
                 <i id="indexPageRight" class="right large chevron icon"></i>
             </div>
     	</div>
-		<div style="z-index: 10; position: absolute; right: 3px; top: 43px;">
+		<!--<div style="z-index: 10; position: absolute; right: 3px; top: 43px;">
 			<div class="pr-widget" id="pr-c3lr" style="height:600px;width:120px;"></div>
 		</div>
 		<div style="z-index: 10; position: absolute; right: 3px; top: 643px;">
 			<div class="pr-widget" id="pr-c3ls" style="height:600px;width:120px;"></div>
 		</div>
 		<div class="pr-widget" id="pr-c3ln" style="height:156px;width:1000px;margin-top:100px"></div>
-		<div class="pr-widget" id="pr-c3lq" style="height:216px;width:760px;"></div>
+		<div class="pr-widget" id="pr-c3lq" style="height:216px;width:760px;"></div>-->
     </div>
 
     <!-- JS -->
